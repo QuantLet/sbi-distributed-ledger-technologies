@@ -1,26 +1,3 @@
-"""
-Toy replicated-ledger + signature + majority-vote consensus demo with blocks.
-
-Improvements:
-- Transaction is a @dataclass with type hints, nonces, tx_id, and full records.
-- Replay protection via:
-    * per-sender nonce
-    * per-node set of seen tx_ids
-- Node maintains:
-    * balances
-    * blockchain (list of Block objects)
-    * next_nonce_per_sender
-    * seen_tx_ids
-- New Block structure:
-    * index
-    * prev_hash
-    * transactions (list of Transaction)
-    * deterministic block hash
-- Network:
-    * runs majority-vote consensus per transaction
-    * if accepted, wraps tx in a Block and appends to each node's blockchain
-- Optional full blockchain printing at the end.
-"""
 
 import json
 import random
